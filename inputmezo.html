@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    #elements {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 10px;
+    }
+
+    #item {
+        border: 1px solid grey;
+        padding: 15px;
+        margin: 50px 5px 5px 5px;
+        border-radius: 25px;
+        background-color: lightgrey;
+
+    }
+
+    
+</style>
+
+</head>
+<body>
+    <div id="content">
+        <div class="input-div">
+            <input type="text" id="inputtext">
+            <button type="submit" onclick="getInputValue()">Submit</button>
+        </div>
+        <div id="elements"></div>
+    </div>
+
+    <script>
+        let b = [];
+
+        function getInputValue(){
+            let a = document.getElementById("inputtext").value;
+            b.push(a);
+            output();
+            console.log(`a: ${a}`);
+            console.log(`b: ${b}`);
+        }
+
+        function output(){
+            let c = ``;
+            // b.forEach(i=>{c += `<div id="item">${b[i]}</div>`;})
+            b.forEach(i=>(c += `<div id="item">${i}</div>`));
+
+            document.getElementById("elements").innerHTML = c;
+            console.log(c);
+        }
+
+    </script>
+</body>
+</html>
